@@ -19,9 +19,32 @@
 <!-- The reason we don't use a simple index.html file instead of a JSP (even though this would
      execute more quickly) is because we want to ensure that the containers are correctly 
      configured to handle JSPs -->
-<jsp:useBean id="someClass" class="redcat.SomeClass"/>
-<html>
-<body>
-<h2><%= someClass.saySomething() %></h2>
-</body>
+     <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+     pageEncoding="ISO-8859-1"%>
+   
+     <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="ISO-8859-1">
+    <title>JSP Actions Example</title>
+    </head>
+    <body>
+    
+    <h1> Student Registration Page</h1>
+     <form action="<%= request.getContextPath() %>/StudentServlet" method="post">
+      First Name: <input type="text" name="firstName">
+      <br> <br> 
+      
+      Last Name: <input type="text" name="lastName">
+      <br> <br> 
+      
+      Email ID: <input type="email" name="emailId">
+      <br> <br> 
+      
+      Password: <input type="password" name="password"><br>
+      
+      <br> 
+      <input type="submit" value="register">
+     </form>
+    </body>
 </html>
