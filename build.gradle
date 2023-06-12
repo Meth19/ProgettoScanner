@@ -20,11 +20,14 @@ java {
         languageVersion = JavaLanguageVersion.of(20)
     }
 }
-tasks.register("deployWar",Copy){
-    from "$buildDir/libs/scannerqr-1.0-SNAPSHOT.war"
-    into "C:/xampp/tomcat"
+
+task loadArtifactOnTomcat(type: Copy){
+from "$buildDir/libs"
+into "c:/xampp/tomcat/webapps"
 }
 
 group = 'redcat'
-version = '1.0-SNAPSHOT'
-description = 'Maven Webapp'
+version = '1.0.0'
+description = 'Progetto esame'
+
+war.finalizedBy loadArtifactOnTomcat

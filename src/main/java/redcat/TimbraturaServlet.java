@@ -19,7 +19,7 @@ public class TimbraturaServlet extends HttpServlet {
         PrintWriter printWriter = resp.getWriter();
         printWriter.print("<html>");
         printWriter.print("<body>");
-        printWriter.print("<p> id :: " + id + "</p>");
+        printWriter.print("<p> pid :: " + id + "</p>");
         printWriter.print("</body>");
         printWriter.print("</html>");
         printWriter.close();
